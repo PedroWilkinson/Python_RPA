@@ -73,3 +73,4 @@ valorEuroPeloGoogle = meuNavegador.find_elements(By.XPATH, '//*[@id="knowledge-c
 tempoPausaComputador.sleep(4)
 
 print(valorEuroPeloGoogle)
+print("Voce conseguiu")
