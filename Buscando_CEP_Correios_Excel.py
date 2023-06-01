@@ -23,3 +23,19 @@ navegador.find_element(By.NAME, "btn_pesquisar").click()
 
 #Aguarda 3 segundos para dar tempo do computador processar as informacoes:
 tempoEspera.sleep(3)
+
+#Pega os dados da rua no site do busca CEP pelo XPATH
+rua = navegador.find_elements(By.XPATH, '//*[@id="resultado-DNEC"]/tbody/tr/td[1]')[0].text
+print(rua)
+
+#Pega os dados da bairro no site do busca CEP pelo XPATH
+bairro = navegador.find_elements(By.XPATH, '//*[@id="resultado-DNEC"]/tbody/tr/td[2]')[0].text
+print(bairro)
+
+#Pega os dados da cidade no site do busca CEP pelo XPATH
+cidade = navegador.find_elements(By.XPATH, '//*[@id="resultado-DNEC"]/tbody/tr/td[3]')[0].text
+print(cidade)
+
+#Pega os dados da CEP no site do busca CEP pelo XPATH
+cep = navegador.find_elements(By.XPATH, '//*[@id="resultado-DNEC"]/tbody/tr/td[4]')[0].text
+print(cep)
