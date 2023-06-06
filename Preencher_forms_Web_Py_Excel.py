@@ -38,7 +38,13 @@ tempoEspera.sleep(3)
 #Clica para enviar as informações
 navegadorFormulario.find_element(By.XPATH, '//*[@id="patas"]/main/article/section/form/div[2]/button').click()
 
+#--------------------------------------------------------------------------------------------------------------------
+# SEGUNDA PARTE
+#--------------------------------------------------------------------------------------------------------------------
 
+from openpyxl import load_workbook
+import os
 
+nomeCaminhoArquivo = ""
 
 
