@@ -1,11 +1,26 @@
 import xlsxwriter as opcoesDoXlsxWriter
 import os
 
-nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\Formulas.xlsx'
-minhaPlanilha = opcoesDoXlsxWriter.Workbook(nomeCaminhoArquivo)
+nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\MergeCells.xlsx'
+workbook = opcoesDoXlsxWriter.Workbook(nomeCaminhoArquivo)
 
-sheetDados = minhaPlanilha.add_worksheet("Dados")
+sheetPadrao = workbook.add_worksheet()
 
+add_merge_celulas = workbook.add_format({
+    'bold': True,
+    'border': 6,
+    'align' : 'center',
+    'valign' : 'vcenter',
+    'size' : 30,
+    'fg_color' : 'blue',
+    'font_color' : 'white',
+
+})
+
+
+sheetPadrao.merge_range('B3:I5', 'Aula de Merge Celulas', add_merge_celulas)
+
+'''
 #Altera a cor do fundo da celula
 #corFundo = minhaPlanilha.add_format({'fg_color':'yellow'})
 
@@ -47,9 +62,11 @@ sheetDados.write_formula("C8", '=CONCATENATE(A8," ",B8)')
 
 #Coluna Tamanho 15
 sheetDados.set_column('A:C', 15)
+'''
+
 
 #Fechando o arquivo
-minhaPlanilha.close()
+workbook.close()
 
 
 #Abrindo o arquivo
