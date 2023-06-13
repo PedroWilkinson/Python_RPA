@@ -11,8 +11,8 @@ add_merge_celulas = workbook.add_format({
     'border': 6,
     'align' : 'center',
     'valign' : 'vcenter',
-    'size' : 30,
-    'fg_color' : 'blue',
+    'size' : 46,
+    'fg_color' : 'red',
     'font_color' : 'white',
 
 })
