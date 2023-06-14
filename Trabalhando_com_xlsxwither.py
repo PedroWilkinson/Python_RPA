@@ -1,18 +1,50 @@
 import xlsxwriter as opcoesDoXlsxWriter
 import os
 
-nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\ArquivoImagem.xlsx'
+nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\FormatacaoCondicional.xlsx'
 workbook = opcoesDoXlsxWriter.Workbook(nomeCaminhoArquivo)
 
 sheetPadrao = workbook.add_worksheet("Dados")
 
 
+formatoMaior = workbook.add_format({'bg_color' : 'green',
+                                    'font_color' : 'white'})
+
+formatoMenor = workbook.add_format({'bg_color' : 'red',
+                                    'font_color' : 'white'})
+
+
+inserirDados = [
+    ["Coluna 1", "Coluna 2", "Coluna 3", "Coluna 4"],
+    [34, 50, 12, 34],
+    [59, 58, 76, 51],
+    [43, 80, 34, 12],
+    [91, 58, 73, 19],
+]
+
+sheetPadrao.write('A1', "Celulas com valores >= 50 estao em verde e < 50 estao em vermelho")
+
+for linha, range in enumerate(inserirDados):
+    sheetPadrao.write_row(linha + 2, 1, range) #Linha 3, Coluna 2
+
+sheetPadrao.conditional_format('B4:E7', {'type' : 'cell',
+                                         'criteria' : '>=',
+                                         'value' : 50,
+                                         'format' : formatoMaior})    
+
+sheetPadrao.conditional_format('B4:E7', {'type' : 'cell',
+                                         'criteria' : '<',
+                                         'value' : 50,
+                                         'format' : formatoMenor})  
+
+
+'''
 sheetPadrao.write("B3", "Imagem logo Udemy")
 
 sheetPadrao.insert_image('B5', 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\logo.png')
 
 
-'''
+
 add_merge_celulas = workbook.add_format({
     'bold': True,
     'border': 6,
