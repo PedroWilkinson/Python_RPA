@@ -1,11 +1,18 @@
 import xlsxwriter as opcoesDoXlsxWriter
 import os
 
-nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\MergeCells.xlsx'
+nomeCaminhoArquivo = 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\ArquivoImagem.xlsx'
 workbook = opcoesDoXlsxWriter.Workbook(nomeCaminhoArquivo)
 
-sheetPadrao = workbook.add_worksheet()
+sheetPadrao = workbook.add_worksheet("Dados")
 
+
+sheetPadrao.write("B3", "Imagem logo Udemy")
+
+sheetPadrao.insert_image('B5', 'C:\\Users\\Pedro W\\Desktop\\PYTHON_GERAL\\PythonRPA\\Xlsxwriter\\logo.png')
+
+
+'''
 add_merge_celulas = workbook.add_format({
     'bold': True,
     'border': 6,
@@ -20,7 +27,7 @@ add_merge_celulas = workbook.add_format({
 
 sheetPadrao.merge_range('B3:I5', 'Aula de Merge Celulas', add_merge_celulas)
 
-'''
+
 #Altera a cor do fundo da celula
 #corFundo = minhaPlanilha.add_format({'fg_color':'yellow'})
 
