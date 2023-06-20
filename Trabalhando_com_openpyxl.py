@@ -11,7 +11,18 @@ planilha_aberta = load_workbook(filename=caminho_nome_arquivo)
 #Seleciona a sheet de Aluno
 sheet_selecionada = planilha_aberta['Aluno']
 
-sheet_selecionada
+sheet_selecionada['A6'] = "=SOMA(A2:A5)" 
+sheet_selecionada['B6'] = "=SOMA(B2:B5)"
+sheet_selecionada['D2'] = "=A2+B2"
+sheet_selecionada['D3'] = "=A3-B3"
+sheet_selecionada['D4'] = "=A4*B4"
+sheet_selecionada['D5'] = "=A5/B5"
+
+
+sheet_selecionada['B12'] = "=MID(A12,1,3)"
+sheet_selecionada['C12'] = "=MID(A12,5,3)"
+sheet_selecionada['D12'] = "=MID(A12,9,3)"
+sheet_selecionada['E12'] = "=MID(A12,13,2)"
 
 
 
