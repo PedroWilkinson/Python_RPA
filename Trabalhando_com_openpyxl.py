@@ -47,6 +47,8 @@ sheet_resumo['B4'] = somarNicolasPereira
 sheet_resumo['A5'] = "Leonardo Almeida"
 sheet_resumo['B5'] = somarLeonardoAlmeida
 
+sheet_resumo['A6'] = "Leonardo Almeida"
+sheet_resumo['B6'] = somarLeonardoAlmeida
 
 
     
